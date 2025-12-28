@@ -2,8 +2,9 @@ cask "orion" do
   version "1.0"
   sha256 :no_check
 
-  url "https://browser.kagi.com/updates/macos/Orion.dmg",
-      user_agent: :fake
+  # Using the direct CDN link to avoid redirect issues
+  url "https://downloads.kagi.com/orion/Orion.dmg",
+      verified: "downloads.kagi.com/orion/"
       
   name "Orion Browser"
   desc "WebKit based, ad-free browser"
