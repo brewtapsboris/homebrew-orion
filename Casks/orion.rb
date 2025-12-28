@@ -1,18 +1,19 @@
 cask "orion" do
-  version "0.99.134.2"
-  sha256 "cce927182fca3e3732f314b439b67b16f913afe7136ecc9b981bd7821e7d4353"
+  version "1.0" # Updated to the new stable version
+  sha256 :no_check # This allows it to always pull the latest without a hash mismatch
 
-  url "https://downloads.kagi.com/orion/Orion-#{version}.dmg"
-  name "Orion"
-  desc "Privacy-focused WebKit browser"
+  url "https://browser.kagi.com/updates/macos/Orion.dmg"
+  name "Orion Browser"
+  desc "WebKit based, ad-free browser"
   homepage "https://browser.kagi.com/"
 
   app "Orion.app"
 
+  uninstall quit: "com.kagi.kagimacOS"
+
   zap trash: [
     "~/Library/Application Support/Orion",
-    "~/Library/Preferences/com.kagi.orion.plist",
-    "~/Library/Saved Application State/com.kagi.orion.savedState",
+    "~/Library/Caches/com.kagi.kagimacOS",
+    "~/Library/Preferences/com.kagi.kagimacOS.plist",
   ]
 end
-
