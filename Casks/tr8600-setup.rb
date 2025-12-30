@@ -7,7 +7,7 @@ cask "tr8600-setup" do
   desc "Printer driver for Canon printer model XYZ"
   homepage "https://www.usa.canon.com/support/p/pixma-tr8620"
 
-  pkg "mac-tr8600-1_5-mcd.dmg"  # Adjust the filename if needed
+  installer manual: "Setup.app"  # Adjust the filename if needed
 
   uninstall pkgutil: "com.canon.pkg.*"
 
